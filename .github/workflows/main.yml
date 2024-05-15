@@ -26,10 +26,10 @@ jobs:
     - run: npm i
     - run: npm run build --if-present
     - name: Deploy to Netlify
-          id: netlify_deploy
-          run: |
-            netlify deploy \
-              --dir build \
-              --site ${{ secrets.NETLIFY_SITE_ID }} \
-              --auth ${{ secrets.NETLIFY_API_TOKEN }}
+        id: netlify_deploy
+        run: |
+          netlify deploy \
+            --dir build \
+            --site ${{ secrets.NETLIFY_SITE_ID }} \
+            --auth ${{ secrets.NETLIFY_API_TOKEN }}
 
