@@ -1,5 +1,4 @@
 import './App.css';
-import TableData from './components/TableData';
 
 function App() {
   return (
