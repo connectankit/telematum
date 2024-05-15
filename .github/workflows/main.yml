@@ -14,7 +14,7 @@ jobs:
     strategy:
       matrix:
         node-version: [18.x]
-
+    environment: NETLIFY_SITE_ID
     steps:
     - name: Install Netlify
       run: npm install netlify-cli@17.10.1 -g
