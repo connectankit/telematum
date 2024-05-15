@@ -14,11 +14,10 @@ jobs:
     strategy:
       matrix:
         node-version: [18.x]
-    environment: NETLIFY_SITE_ID
     steps:
     - name: Print Netlify Site ID
       env:
-         GITHUB_CONTEXT: ${{ toJson(github) }}
+         GITHUB_CONTEXT: ${{secrets.NETLIFY_SITE_ID}}
       run: echo "Netlify Site ID is $GITHUB_CONTEXT"
     - name: Install Netlify
       run: npm install netlify-cli@17.10.1 -g
@@ -34,5 +33,5 @@ jobs:
       run: |
         netlify deploy \
           --dir build \
-          --site ${{ secrets.NETLIFY_SITE_ID.NETLIFY_SITE_ID }} \
-          --auth ${{ secrets.NETLIFY_SITE_ID.NETLIFY_API_TOKEN }}
+          --site ${{ secrets.NETLIFY_SITE_ID }} \
+          --auth ${{ secrets.NETLIFY_API_TOKEN }}
