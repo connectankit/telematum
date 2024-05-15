@@ -17,6 +17,8 @@ jobs:
     environment: NETLIFY_SITE_ID
     steps:
     - name: Print Netlify Site ID
+      env:
+        NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
       run: echo "Netlify Site ID is $NETLIFY_SITE_ID"
     - name: Install Netlify
       run: npm install netlify-cli@17.10.1 -g
